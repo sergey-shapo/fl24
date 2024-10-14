@@ -8,6 +8,7 @@ export default function Home() {
         height="650px"
         className="w-full"
         src="https://www.avionio.com/widget/es/bcn/departures?style=2"
+        title="Horario de salidas y llegadas aeropuerto Barcelona"
       />
       <BcnDepartures />
     </main>
