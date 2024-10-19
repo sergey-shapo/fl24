@@ -21,6 +21,12 @@ export const metadata: Metadata = {
     "Obtén información actualizada sobre vuelos del Aeropuerto de Barcelona-El Prat (BCN). Horarios, llegadas, salidas, y más detalles en tiempo real.",
 };
 
+const gaId = process.env.GOOGLE_ANALYTICS_ID;
+
+if (!gaId) {
+  console.error("Missing Google Analytics ID");
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -33,7 +39,7 @@ export default function RootLayout({
       >
         {children}
       </body>
-      <GoogleAnalytics gaId="G-T63FNHCM12" />
+      <GoogleAnalytics gaId={gaId!} />
     </html>
   );
 }
